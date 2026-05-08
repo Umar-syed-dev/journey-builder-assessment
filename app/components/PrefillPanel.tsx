@@ -17,7 +17,7 @@ export function PrefillPanel({
   onOpenPicker,
 }: PrefillPanelProps) {
   return (
-    <section className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/70">
+    <section className="rounded-4xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/70">
       <div className="flex flex-col gap-3 border-b border-slate-100 pb-5 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">

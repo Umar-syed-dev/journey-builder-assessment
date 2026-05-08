@@ -138,7 +138,9 @@ function getUiFieldOrder(
   const uiKeys =
     form.ui_schema?.elements
       ?.map((element) => parseControlScope(element.scope))
-      .filter((key): key is string => Boolean(key) && key in properties) ?? [];
+      .filter(
+        (key): key is string => key !== null && key in properties,
+      ) ?? [];
 
   return [
     ...uiKeys,

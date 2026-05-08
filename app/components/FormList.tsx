@@ -14,7 +14,7 @@ export function FormList({
   onSelectForm,
 }: FormListProps) {
   return (
-    <aside className="rounded-[2rem] border border-slate-200 bg-white/85 p-4 shadow-sm shadow-slate-200/60 backdrop-blur">
+    <aside className="rounded-4xl border border-slate-200 bg-white/85 p-4 shadow-sm shadow-slate-200/60 backdrop-blur">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">

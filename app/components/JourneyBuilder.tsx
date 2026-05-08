@@ -30,13 +30,14 @@ export function JourneyBuilder({ graph }: JourneyBuilderProps) {
 
   if (!selectedForm) {
     return (
-      <div className="rounded-[2rem] border border-amber-200 bg-amber-50 p-8 text-amber-900">
+      <div className="rounded-4xl border border-amber-200 bg-amber-50 p-8 text-amber-900">
         No forms were found in this action blueprint.
       </div>
     );
   }
 
-  const selectedMappings = mappingsByForm[selectedForm.id] ?? {};
+  const selectedFormKey = selectedForm.id;
+  const selectedMappings = mappingsByForm[selectedFormKey] ?? {};
   const optionGroups = activeField
     ? getPrefillOptionGroups({
         graph,
@@ -48,8 +49,8 @@ export function JourneyBuilder({ graph }: JourneyBuilderProps) {
   function updateMapping(fieldKey: string, mapping: PrefillMapping) {
     setMappingsByForm((current) => ({
       ...current,
-      [selectedForm.id]: {
-        ...(current[selectedForm.id] ?? {}),
+      [selectedFormKey]: {
+        ...(current[selectedFormKey] ?? {}),
         [fieldKey]: mapping,
       },
     }));
@@ -57,12 +58,12 @@ export function JourneyBuilder({ graph }: JourneyBuilderProps) {
 
   function clearMapping(fieldKey: string) {
     setMappingsByForm((current) => {
-      const nextMappings = { ...(current[selectedForm.id] ?? {}) };
+      const nextMappings = { ...(current[selectedFormKey] ?? {}) };
       delete nextMappings[fieldKey];
 
       return {
         ...current,
-        [selectedForm.id]: nextMappings,
+        [selectedFormKey]: nextMappings,
       };
     });
   }
@@ -79,7 +80,7 @@ export function JourneyBuilder({ graph }: JourneyBuilderProps) {
       />
 
       <div className="space-y-6">
-        <section className="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 text-white shadow-xl shadow-slate-300/50">
+        <section className="overflow-hidden rounded-4xl border border-slate-200 bg-slate-950 text-white shadow-xl shadow-slate-300/50">
           <div className="grid gap-4 p-6 md:grid-cols-[1fr_auto] md:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-300">

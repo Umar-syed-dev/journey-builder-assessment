@@ -45,7 +45,7 @@ export function DataElementModal({
       className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/35 p-4 backdrop-blur-sm"
       role="dialog"
     >
-      <div className="flex max-h-[86vh] w-full max-w-4xl flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl shadow-slate-950/20">
+      <div className="flex max-h-[86vh] w-full max-w-4xl flex-col overflow-hidden rounded-4xl border border-slate-200 bg-white shadow-2xl shadow-slate-950/20">
         <header className="border-b border-slate-200 p-6">
           <div className="flex items-start justify-between gap-4">
             <div>
